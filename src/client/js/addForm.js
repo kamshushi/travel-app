@@ -27,7 +27,18 @@ function addForm(e){
         .then(res => getCityCoordinates(res))
         .then(res => getWeather(res))
         .then(res => {
-            newTrip(res)
+            return fetch('/card',{
+                method:'POST',
+                credentials:'same-origin',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(res)
+            })
+        })
+        .then(res => res.json())
+        .then(res => {
+            newTrip()
         })
         .catch(error => "Couldn't Add A New Trip")
 
