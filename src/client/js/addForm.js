@@ -27,7 +27,7 @@ function addForm(e){
         .then(res => getCityCoordinates(res))
         .then(res => getWeather(res))
         .then(res => {
-            return fetch('/card',{
+            return fetch('http://localhost:8081/card',{
                 method:'POST',
                 credentials:'same-origin',
                 headers:{

@@ -7,15 +7,15 @@ const bodyParser= require('body-parser')
 
 let dataObj= {};
 
-const corsOptions = {
-    origin: 'http://localhost:8081',
-    optionsSuccessStatus: 200 
-}
+// const corsOptions = {
+//     origin: 'http://localhost:8080',
+//     optionsSuccessStatus: 200 
+// }
 
 dotenv.config()
 
 const app= express()
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 app.use(express.static('dist'));

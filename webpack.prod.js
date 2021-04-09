@@ -42,7 +42,10 @@ module.exports={
             filename:"[name].css",
         }),
         new OptimizeCSSAssetsPlugin({}),
-        new WorkboxPlugin.GenerateSW()
+        new WorkboxPlugin.GenerateSW({
+            clientsClaim: true,
+            skipWaiting: true,
+        })
     ]
     
 }

@@ -1,6 +1,6 @@
 import {isWithinAWeek} from './isWithinAWeek'
 function newTrip(){
-    fetch('/card')
+    fetch('http://localhost:8081/card')
     .then(res => res.json())
     .then(res => {
         const obj= res
@@ -46,7 +46,7 @@ function newTrip(){
     
         const removeTrip= document.createElement('BUTTON')
         removeTrip.className= 'remove-trip'
-        removeTrip.textContent= 'Remove Trip'
+        removeTrip.textContent= 'Remove'
         removeTrip.addEventListener('click',function(e){
             e.target.parentElement.parentElement.remove()
         })
